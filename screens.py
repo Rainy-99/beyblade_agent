@@ -121,7 +121,7 @@ REWARD_WEIGHTS = {
     'splinter_echo': {'CTRL': 0, 'AGGR': 2, 'SURV': 1, 'RISK': 3, 'FLEX': 0, 'TEMPO': 0},
     
     # 第5關：核心選擇
-    'chaos': {'CTRL': 0, 'AGGR': 3, 'SURV': 0, 'RISK': 3, 'FLEX': 0, 'TEMPO': 1},
+    'chaos': {'CTRL': 0, 'AGGR': 3, 'SURV': 0, 'RISK': 2, 'FLEX': 2, 'TEMPO': 1},
     'shield': {'CTRL': 2, 'AGGR': 0, 'SURV': 3, 'RISK': 1, 'FLEX': 0, 'TEMPO': 0},
     'crown': {'CTRL': 0, 'AGGR': 2, 'SURV': 3, 'RISK': 0, 'FLEX': 0, 'TEMPO': 3},
 }
@@ -811,7 +811,7 @@ class FinalScreen:
                 for dim, weight in REWARD_WEIGHTS[attr].items():
                     scores[dim] += weight
  
-        dim_priority = ['CTRL', 'SURV', 'AGGR', 'FLEX', 'RISK', 'TEMPO']
+        dim_priority = ['CTRL', 'SURV', 'AGGR', 'FLEX', 'TEMPO', 'RISK']
         max_score = max(scores.values()) if scores.values() else 0
         for dim in dim_priority:
             if scores[dim] == max_score:
